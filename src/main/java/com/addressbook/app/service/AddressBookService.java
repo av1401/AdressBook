@@ -1,6 +1,7 @@
 package com.addressbook.app.service;
 
 import com.addressbook.app.dto.AddressBookDTO;
+import com.addressbook.app.exception.AddressBookException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -27,8 +28,7 @@ public class AddressBookService {
         if (id >= 0 && id < addressBookList.size()) {
             return addressBookList.get(id);
         } else {
-            log.error("Contact with ID {} not found", id);
-            return null;
+            throw new AddressBookException("Address Book Entry with ID " + id + " not found!");
         }
     }
 
@@ -37,7 +37,7 @@ public class AddressBookService {
         if (id >= 0 && id < addressBookList.size()) {
             addressBookList.set(id, contact);
         } else {
-            log.error("Contact with ID {} not found", id);
+            throw new AddressBookException("Address Book Entry with ID " + id + " not found!");
         }
     }
 
@@ -46,7 +46,7 @@ public class AddressBookService {
         if (id >= 0 && id < addressBookList.size()) {
             addressBookList.remove(id);
         } else {
-            log.error("Contact with ID {} not found", id);
+            throw new AddressBookException("Address Book Entry with ID " + id + " not found!");
         }
     }
 }
