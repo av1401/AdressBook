@@ -1,5 +1,6 @@
 package com.addressbook.app;
 
+//import necessary things
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
