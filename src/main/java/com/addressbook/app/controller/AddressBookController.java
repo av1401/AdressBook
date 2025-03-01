@@ -17,6 +17,7 @@ public class AddressBookController {
     public AddressBookController(AddressBookService addressBookService) {
         this.addressBookService = addressBookService;
     }
+    //Get mapping for contacts
 
     @GetMapping("/contacts")
     public ResponseEntity<List<AddressBookDTO>> getAllContacts() {
